@@ -1,1 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    text-transform: capitalize;
+
+}
+.bg-container{
+    background-color: whitesmoke;
+    height: 100%;
+    min-height: 100vh;
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+
+
+   
+}
+
+h2{
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+
+/* sidebar start */
+.sidebar{
+    background-color: aquamarine;
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+ 
+ 
+}
+
+.sidebar button{
+    padding: 0;
+border: none;
+background: none;
+font-weight: bold;
+padding: 5px;
+}
+
+
+
+/* sidebar end */
+
+
+
+
+.main{
+    background-color: coral;
+    padding: 1rem;
+    min-width: 500px;
+
+
+}
+
