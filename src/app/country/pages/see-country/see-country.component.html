@@ -1,1 +1,63 @@
-<p>see-country works!</p>
+<div *ngIf="!country; else divCountry" class="alert-blue">please wait...</div>
+
+
+<ng-template #divCountry>
+
+
+
+    <h1>{{country.name.common}}</h1>
+    <hr>
+    <div class="single-country">
+
+
+    <img class="medium-flag" [src]="country.flags.svg" [alt]="country.name.common">
+    
+
+    <table id="custom-table">
+       
+        <tr>
+            <th>official name</th>
+            <td>{{country.name.official}}</td>
+
+        </tr>
+
+        <tr>
+            <th>population</th>
+            <td>{{country.population | number}}</td>
+        </tr>
+        <tr>
+            <th>capital</th>
+            <td>{{country.capital}}</td>
+
+        </tr>
+
+
+        <tr>
+            <th>Language spoken</th>
+            <td *ngFor="let l of country.languages | keyvalue " >{{l.value}}</td>
+
+        </tr>
+        <tr>
+            <th>currency</th>
+            <td *ngFor="let c of country.currencies | keyvalue">{{c.value.name}}</td>
+
+        </tr>
+
+
+        <tr>
+            <th>shared borders</th>
+            <td>{{country.borders}}</td>
+
+        </tr>
+
+       
+
+       
+       
+      </table>
+
+
+    </div>
+
+
+</ng-template>

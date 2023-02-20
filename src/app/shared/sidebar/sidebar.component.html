@@ -1,1 +1,13 @@
-<p>sidebar works!</p>
+
+<div class="sidebar">
+
+    <div class="logo">
+        <h2>Country-wiki </h2>
+        <small>the free country encyclopedia!</small>
+    </div>
+            <!-- have to add [routerLinkActiveOptions] since path is empty -->
+    <button routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">search by country</button>
+    <button routerLink="region" routerLinkActive="active">search by region</button>
+    <button routerLink="capital" routerLinkActive="active">search by capital</button>
+    
+</div>

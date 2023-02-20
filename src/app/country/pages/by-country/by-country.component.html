@@ -1,1 +1,24 @@
-<p>by-country works!</p>
+<h1>by country</h1>
+<hr>
+
+
+<app-country-input 
+(onEnter)="search($event)"
+placeholder="search for country..."
+(onDebounce)="suggestions($event)"></app-country-input>
+
+<div 
+class="alert"
+*ngIf="isThereAnError"
+>nothing was found under ({{keyword}}). Please make sure you are not just making something up...
+</div>
+
+<!-- 0000000000000000 table -->
+
+<app-country-table 
+[isThereAnError]="isThereAnError" 
+[countries]="countries">
+</app-country-table>
+
+
+

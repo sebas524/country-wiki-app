@@ -1,29 +1,13 @@
 
 
 <div class="bg-container">
-
-
-    <div class="sidebar">
-
-        <div class="logo">
-            <h2>Country-wiki </h2>
-            <small>the free country encyclopedia!</small>
-
-        </div>
-
-       
-        
-        
-            <button>search by country</button>
-            <button>search by region</button>
-            <button>search by capital</button>
-        
-    </div>
-<!-- division -->
+    
+<app-sidebar></app-sidebar>
+<!-- 000000000000000000000000000000000000000000000000000000000000000 -->
     <div class="main">
-        <h2>by capital</h2>
-        <hr>
-        <app-by-capital></app-by-capital>
+        <!-- to renderize routed component -->
+        <router-outlet></router-outlet>
+     
     </div>
 
 </div>
