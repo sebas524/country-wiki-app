@@ -1,1 +1,13 @@
-<p>by-region works!</p>
+<h1>by region <small>{{activeRegion | titlecase}}</small></h1>
+<hr>
+
+
+<h5>select region:</h5>
+
+
+<button 
+class="region-btn" 
+*ngFor="let region of regions"
+(click)="regionActivator(region)">{{region}}</button>
+
+<app-country-table [isThereAnError]="isThereAnError" [countries]="countries"></app-country-table>
