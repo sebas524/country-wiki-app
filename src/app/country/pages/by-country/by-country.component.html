@@ -1,3 +1,4 @@
+<div class="animate__animated animate__fadeIn animate__faster">
 <h1>by country</h1>
 <hr>
 
@@ -5,7 +6,17 @@
 <app-country-input 
 (onEnter)="search($event)"
 placeholder="search for country..."
-(onDebounce)="suggestions($event)"></app-country-input>
+(onDebounce)="suggestions($event)">
+</app-country-input>
+
+<div *ngIf="isSuggested" >
+<div
+class="sugg-btn"
+*ngFor="let country of suggestedCountries"
+[routerLink]="['/country', country.cca2]"
+(click)="searchTheSuggested(keyword)"
+>{{country.name.common}}</div>
+</div>
 
 <div 
 class="alert"
@@ -20,5 +31,6 @@ class="alert"
 [countries]="countries">
 </app-country-table>
 
+</div>
 
 

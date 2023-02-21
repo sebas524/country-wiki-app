@@ -1,3 +1,4 @@
+<div class="animate__animated animate__fadeIn animate__faster">
 <h1>by region <small>{{activeRegion | titlecase}}</small></h1>
 <hr>
 
@@ -6,8 +7,9 @@
 
 
 <button 
-class="region-btn" 
+class="region-btn " 
 *ngFor="let region of regions"
 (click)="regionActivator(region)">{{region}}</button>
 
 <app-country-table [isThereAnError]="isThereAnError" [countries]="countries"></app-country-table>
+</div>

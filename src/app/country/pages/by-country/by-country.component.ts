@@ -13,12 +13,17 @@ export class ByCountryComponent {
   keyword: string = ""
   isThereAnError: boolean = false
   countries: Country[] =[]
+  suggestedCountries: Country[] =[]
+  isSuggested:boolean=false
 
 
   constructor(private countryService:CountryService){}
 
 
   search(keyword:string){
+
+    this.isSuggested = false
+
   
     this.isThereAnError = false
     this.keyword = keyword
@@ -41,7 +46,23 @@ export class ByCountryComponent {
   suggestions(keyword:string ){
 
     this.isThereAnError = false
+    this.isSuggested = true
+
+    this.countryService.search4Country(keyword)
+      .subscribe(countries=>
+        this.suggestedCountries = countries.splice(0,5),
+        (error)=> this.suggestedCountries = []
+
+      )
      
+
+  }
+
+  searchTheSuggested(keyword:string){
+    this.search(keyword)
+    this.isSuggested = false
+
+
 
   }
 
